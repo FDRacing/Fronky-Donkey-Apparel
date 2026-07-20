@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Fronky Donkey Racing"
+version = "1.0.0"
+id = "artifacts/fronky-donkey-racing"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24917
+
+[services.development]
+run = "pnpm --filter @workspace/fronky-donkey-racing run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/fronky-donkey-racing", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/fronky-donkey-racing/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24917"
+BASE_PATH = "/"
