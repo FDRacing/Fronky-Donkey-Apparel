@@ -13,7 +13,9 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-      <Route path="/shop" component={Shop} />
+      <Route path="/shop" component={() => <Shop category="all" />} />
+      <Route path="/shop/jerseys" component={() => <Shop category="jerseys" />} />
+      <Route path="/shop/hats" component={() => <Shop category="hats" />} />
       <Route component={NotFound} />
     </Switch>
   );
