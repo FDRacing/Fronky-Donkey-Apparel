@@ -211,16 +211,14 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
               {/* Product 1 */}
-              <div className="group relative bg-background border border-border p-4 hover:border-primary transition-colors duration-300">
+              <Link href="/shop/product/1" className="group relative bg-background border border-border p-4 hover:border-primary transition-colors duration-300 block">
                 <div className="aspect-[4/5] bg-secondary relative overflow-hidden mb-6">
                   <img src="/jersey-1.jpg" alt="Widowmaker Red/Black Jersey" className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute top-4 left-4 bg-primary text-black font-display text-xl uppercase px-3 py-1">New</div>
-                  
-                  {/* Quick Add Overlay */}
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
-                    <button className="bg-white text-black font-display text-2xl uppercase px-8 py-4 hover:bg-primary hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300 shadow-lg">
-                      Quick Add
-                    </button>
+                    <span className="bg-white text-black font-display text-2xl uppercase px-8 py-4 transform translate-y-4 group-hover:translate-y-0 duration-300 shadow-lg">
+                      View Product
+                    </span>
                   </div>
                 </div>
                 <div className="flex justify-between items-start">
@@ -230,18 +228,16 @@ export default function Home() {
                   </div>
                   <span className="text-2xl font-display text-white">$65</span>
                 </div>
-              </div>
+              </Link>
 
               {/* Product 2 */}
-              <div className="group relative bg-background border border-border p-4 hover:border-primary transition-colors duration-300 mt-0 md:mt-16">
+              <Link href="/shop/product/2" className="group relative bg-background border border-border p-4 hover:border-primary transition-colors duration-300 mt-0 md:mt-16 block">
                 <div className="aspect-[4/5] bg-secondary relative overflow-hidden mb-6">
                   <img src="/jersey-2.jpg" alt="Yellowjacket Vintage Jersey" className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" />
-                  
-                  {/* Quick Add Overlay */}
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
-                    <button className="bg-white text-black font-display text-2xl uppercase px-8 py-4 hover:bg-primary hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300 shadow-lg">
-                      Quick Add
-                    </button>
+                    <span className="bg-white text-black font-display text-2xl uppercase px-8 py-4 transform translate-y-4 group-hover:translate-y-0 duration-300 shadow-lg">
+                      View Product
+                    </span>
                   </div>
                 </div>
                 <div className="flex justify-between items-start">
@@ -251,7 +247,7 @@ export default function Home() {
                   </div>
                   <span className="text-2xl font-display text-white">$65</span>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
         </section>
@@ -307,67 +303,23 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {/* Hat 1 */}
-              <div className="group bg-background border border-border p-4 hover:border-primary transition-colors flex flex-col">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-2xl mx-auto lg:max-w-none">
+              {/* The Bone Crusher */}
+              <Link href="/shop/product/3" className="group bg-background border border-border p-4 hover:border-primary transition-colors flex flex-col block">
                 <div className="aspect-square bg-secondary relative overflow-hidden mb-4 p-6 flex items-center justify-center">
-                  <img src="/hat-1.jpg" alt="Skull Snapback" className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" />
+                  <img src="/hat-1.jpg" alt="The Bone Crusher Snapback" className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                    <span className="bg-white text-black font-display text-xl uppercase px-6 py-3 transform translate-y-4 group-hover:translate-y-0 duration-300 shadow-lg">
+                      View Product
+                    </span>
+                  </div>
                 </div>
-                <h4 className="text-xl font-display uppercase text-white mt-auto">The Bone Crusher</h4>
+                <h4 className="text-xl font-display uppercase text-white mt-auto group-hover:text-primary transition-colors">The Bone Crusher</h4>
                 <div className="flex justify-between items-center mt-2">
                   <p className="text-sm text-muted-foreground font-sans">Black Snapback</p>
                   <span className="text-lg font-display text-primary">$32</span>
                 </div>
-                <button className="w-full bg-secondary text-white font-display uppercase py-3 mt-4 hover:bg-primary transition-colors text-lg">
-                  Add to Cart
-                </button>
-              </div>
-
-              {/* Hat 2 */}
-              <div className="group bg-background border border-border p-4 hover:border-primary transition-colors flex flex-col">
-                <div className="aspect-square bg-secondary relative overflow-hidden mb-4 p-6 flex items-center justify-center">
-                  <img src="/hat-2.jpg" alt="Vintage Racer Trucker" className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" />
-                </div>
-                <h4 className="text-xl font-display uppercase text-white mt-auto">Checkered Flag</h4>
-                <div className="flex justify-between items-center mt-2">
-                  <p className="text-sm text-muted-foreground font-sans">Red/White Trucker</p>
-                  <span className="text-lg font-display text-primary">$28</span>
-                </div>
-                <button className="w-full bg-secondary text-white font-display uppercase py-3 mt-4 hover:bg-primary transition-colors text-lg">
-                  Add to Cart
-                </button>
-              </div>
-
-              {/* Hat 3 - Mock */}
-              <div className="group bg-background border border-border p-4 hover:border-primary transition-colors flex flex-col">
-                <div className="aspect-square bg-secondary relative overflow-hidden mb-4 p-6 flex items-center justify-center bg-[url('/hat-1.jpg')] bg-cover bg-center grayscale blur-[2px] opacity-70">
-                   <div className="absolute inset-0 flex items-center justify-center">
-                     <span className="bg-black/80 text-white font-display text-2xl uppercase px-4 py-2 rotate-12">Sold Out</span>
-                   </div>
-                </div>
-                <h4 className="text-xl font-display uppercase text-muted-foreground mt-auto">Mud Slinger</h4>
-                <div className="flex justify-between items-center mt-2">
-                  <p className="text-sm text-muted-foreground font-sans">Olive Fitted</p>
-                  <span className="text-lg font-display text-muted-foreground line-through">$35</span>
-                </div>
-                <button className="w-full bg-secondary/50 text-muted-foreground font-display uppercase py-3 mt-4 cursor-not-allowed text-lg">
-                  Notify Me
-                </button>
-              </div>
-
-              {/* Hat 4 - Mock */}
-              <div className="group bg-background border border-border p-4 hover:border-primary transition-colors flex flex-col">
-                <div className="aspect-square bg-secondary relative overflow-hidden mb-4 p-6 flex items-center justify-center bg-[url('/hat-2.jpg')] bg-cover bg-center hue-rotate-[180deg] saturate-50">
-                </div>
-                <h4 className="text-xl font-display uppercase text-white mt-auto">Cold Starts Beanie</h4>
-                <div className="flex justify-between items-center mt-2">
-                  <p className="text-sm text-muted-foreground font-sans">Orange Knit</p>
-                  <span className="text-lg font-display text-primary">$24</span>
-                </div>
-                <button className="w-full bg-secondary text-white font-display uppercase py-3 mt-4 hover:bg-primary transition-colors text-lg">
-                  Add to Cart
-                </button>
-              </div>
+              </Link>
             </div>
           </div>
         </section>
