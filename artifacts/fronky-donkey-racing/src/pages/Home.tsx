@@ -285,9 +285,6 @@ export default function Home() {
                   </p>
                 </div>
                 
-                <button className="mt-12 w-fit flex items-center gap-3 bg-secondary text-white font-display text-xl uppercase px-8 py-4 hover:bg-white hover:text-black transition-colors group border border-border">
-                  Read the Manifesto <ArrowUpRight className="w-6 h-6 group-hover:rotate-45 transition-transform" />
-                </button>
               </div>
             </div>
           </div>
