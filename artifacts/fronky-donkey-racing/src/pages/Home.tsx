@@ -1,6 +1,8 @@
 import { Link } from "wouter";
 import { useEffect, useState } from "react";
 import { Menu, X, ShoppingCart, ChevronRight, ArrowUpRight } from "lucide-react";
+import { useCart } from "../context/CartContext";
+import CartDrawer from "../components/CartDrawer";
 
 const navLinks = [
   { name: "Jerseys", href: "#jerseys" },
@@ -12,6 +14,7 @@ const navLinks = [
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { cartCount, setCartOpen } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,11 +63,17 @@ export default function Home() {
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <button 
-              className="p-2 text-foreground hover:text-primary transition-colors"
-              aria-label="Cart"
+            <button
+              onClick={() => setCartOpen(true)}
+              className="relative p-2 text-foreground hover:text-primary transition-colors"
+              aria-label="Open cart"
             >
               <ShoppingCart className="w-6 h-6" />
+              {cartCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-display w-5 h-5 flex items-center justify-center rounded-full">
+                  {cartCount}
+                </span>
+              )}
             </button>
             <Link href="/shop" data-testid="link-shop-now" className="bg-primary text-primary-foreground font-display text-xl uppercase px-6 py-2 hover:bg-white hover:text-black transition-all border-2 border-primary hover:border-white shadow-sm hover:shadow-md transform hover:-translate-y-1">
               Shop Now
@@ -462,6 +471,7 @@ export default function Home() {
           </div>
         </footer>
       </main>
+      <CartDrawer />
     </div>
   );
 }
