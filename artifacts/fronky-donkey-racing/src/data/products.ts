@@ -14,7 +14,7 @@ export interface Product {
   details: string[];
 }
 
-export const JERSEY_SIZES = ["S", "M", "L", "XL", "XXL"];
+export const JERSEY_SIZES = ["L"];
 
 export const products: Product[] = [
   {
