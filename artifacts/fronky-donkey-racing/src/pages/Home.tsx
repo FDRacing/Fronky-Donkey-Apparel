@@ -139,12 +139,6 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-            <a href="#jerseys" onClick={(e) => scrollToSection(e, "#jerseys")} className="text-white hover:text-primary transition-colors">
-              <div className="w-[2px] h-16 bg-gradient-to-b from-white to-transparent mx-auto mb-2"></div>
-              <span className="font-display uppercase tracking-widest text-sm">Scroll</span>
-            </a>
-          </div>
         </section>
 
         {/* Marquee */}
