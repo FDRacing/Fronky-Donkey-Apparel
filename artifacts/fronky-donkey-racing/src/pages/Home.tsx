@@ -415,7 +415,12 @@ export default function Home() {
                 &copy; {new Date().getFullYear()} Fronky Donkey Racing. All rights reserved. Go outside.
               </p>
               <div className="flex gap-6">
-                <a href="#" className="text-muted-foreground hover:text-white transition-colors font-display uppercase tracking-widest">Insta</a>
+                <a href="#" className="relative group/insta text-muted-foreground hover:text-white transition-colors font-display uppercase tracking-widest">
+                  Insta
+                  <span className="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-[#111] border border-border text-white text-xs font-sans px-3 py-1.5 opacity-0 group-hover/insta:opacity-100 transition-opacity duration-200 pointer-events-none">
+                    @FronkyDonkeyRacing
+                  </span>
+                </a>
               </div>
             </div>
           </div>
