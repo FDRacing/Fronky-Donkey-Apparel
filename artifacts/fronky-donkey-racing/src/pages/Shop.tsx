@@ -41,31 +41,6 @@ const products: Product[] = [
     category: "hats",
     image: "/hat-1.jpg",
   },
-  {
-    id: 4,
-    name: "Checkered Flag",
-    subtitle: "Red / White Trucker",
-    price: 28,
-    category: "hats",
-    image: "/hat-2.jpg",
-  },
-  {
-    id: 5,
-    name: "Mud Slinger",
-    subtitle: "Olive Fitted",
-    price: 35,
-    category: "hats",
-    image: "/hat-1.jpg",
-    soldOut: true,
-  },
-  {
-    id: 6,
-    name: "Cold Starts Beanie",
-    subtitle: "Orange Knit",
-    price: 24,
-    category: "hats",
-    image: "/hat-2.jpg",
-  },
 ];
 
 const navLinks: { label: string; href: string; value: Category }[] = [
