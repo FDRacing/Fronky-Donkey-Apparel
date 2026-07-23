@@ -355,7 +355,7 @@ export default function Home() {
             </div>
             <div className="relative group overflow-hidden bg-secondary flex items-center justify-center p-8 aspect-square col-span-2 md:col-span-1 border border-border">
               <div className="text-center">
-                <span className="block font-display text-4xl text-white mb-2">#FRONKYDONKEY</span>
+                <span className="block font-display text-4xl text-white mb-2">#FDRacing</span>
                 <button className="text-primary font-sans hover:text-white transition-colors underline underline-offset-4">Join the club</button>
               </div>
             </div>
