@@ -263,7 +263,7 @@ export default function Home() {
                 <img src="/garage.jpg" alt="Messy dirtbike garage" className="w-full aspect-square object-cover shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" />
                 <div className="absolute -bottom-10 -right-10 bg-primary p-8 hidden md:block">
                   <span className="font-display text-6xl text-white uppercase block leading-none">Est.</span>
-                  <span className="font-display text-8xl text-black uppercase block leading-none mt-2">2024</span>
+                  <span className="font-display text-8xl text-black uppercase block leading-none mt-2">2026</span>
                 </div>
               </div>
               
