@@ -394,8 +394,6 @@ export default function Home() {
                   <ul className="space-y-4 font-sans text-muted-foreground">
                     <li><a href="#jerseys" className="hover:text-primary transition-colors">Jerseys</a></li>
                     <li><a href="#hats" className="hover:text-primary transition-colors">Hats & Beanies</a></li>
-                    <li><a href="#" className="hover:text-primary transition-colors">Accessories</a></li>
-                    <li><a href="#" className="hover:text-primary transition-colors">Gift Cards</a></li>
                   </ul>
                 </div>
                 <div>
