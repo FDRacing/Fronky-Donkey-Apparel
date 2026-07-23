@@ -6,6 +6,8 @@ import { Route, Switch, Router as WouterRouter } from 'wouter';
 import { useEffect } from 'react';
 import Home from '@/pages/Home';
 import Shop from '@/pages/Shop';
+import ProductDetail from '@/pages/ProductDetail';
+import { CartProvider } from '@/context/CartContext';
 
 const queryClient = new QueryClient();
 
@@ -16,13 +18,13 @@ function Router() {
       <Route path="/shop" component={() => <Shop category="all" />} />
       <Route path="/shop/jerseys" component={() => <Shop category="jerseys" />} />
       <Route path="/shop/hats" component={() => <Shop category="hats" />} />
+      <Route path="/shop/product/:id" component={ProductDetail} />
       <Route component={NotFound} />
     </Switch>
   );
 }
 
 function App() {
-  // Force dark mode for that gritty vibe
   useEffect(() => {
     document.documentElement.classList.add('dark');
   }, []);
@@ -30,9 +32,11 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <WouterRouter base={import.meta.env.BASE_URL?.replace(/\/$/, '') || ''}>
-          <Router />
-        </WouterRouter>
+        <CartProvider>
+          <WouterRouter base={import.meta.env.BASE_URL?.replace(/\/$/, '') || ''}>
+            <Router />
+          </WouterRouter>
+        </CartProvider>
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>
