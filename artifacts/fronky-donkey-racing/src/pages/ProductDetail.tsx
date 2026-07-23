@@ -1,6 +1,6 @@
 import { Link, useParams } from "wouter";
 import { useState } from "react";
-import { ChevronRight, Check } from "lucide-react";
+import { ChevronRight, Check, X } from "lucide-react";
 import { products, JERSEY_SIZES, type Product } from "../data/products";
 import { useCart } from "../context/CartContext";
 import ShopNav from "../components/ShopNav";
@@ -25,6 +25,7 @@ export default function ProductDetail() {
     product?.category === "hats" ? "One Size" : null
   );
   const [added, setAdded] = useState(false);
+  const [sizeChartOpen, setSizeChartOpen] = useState(false);
 
   if (!product) {
     return (
@@ -120,7 +121,10 @@ export default function ProductDetail() {
                   {product.category === "jerseys" ? "Select Size" : "Size"}
                 </p>
                 {product.category === "jerseys" && (
-                  <button className="font-sans text-sm text-muted-foreground underline hover:text-white transition-colors">
+                  <button
+                    onClick={() => setSizeChartOpen(true)}
+                    className="font-sans text-sm text-muted-foreground underline hover:text-white transition-colors"
+                  >
                     Size Guide
                   </button>
                 )}
@@ -216,6 +220,65 @@ export default function ProductDetail() {
           </div>
         </div>
       </div>
+      {/* ── Size Chart Modal ─────────────────────────────────────────── */}
+      {sizeChartOpen && (
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center"
+          onClick={() => setSizeChartOpen(false)}
+        >
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+          <div
+            className="relative w-full max-w-lg bg-[#111] border border-border p-8 z-10 mx-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSizeChartOpen(false)}
+              className="absolute top-4 right-4 text-muted-foreground hover:text-white transition-colors"
+              aria-label="Close size guide"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <h2 className="font-display uppercase tracking-widest text-white text-2xl mb-1">
+              Size Guide
+            </h2>
+            <p className="font-sans text-muted-foreground text-sm mb-6">
+              All measurements are in inches.
+            </p>
+
+            <table className="w-full text-sm font-sans border-collapse">
+              <thead>
+                <tr className="border-b border-border">
+                  <th className="text-left font-display uppercase tracking-widest text-muted-foreground text-xs pb-3 pr-4">
+                    Size
+                  </th>
+                  <th className="text-left font-display uppercase tracking-widest text-muted-foreground text-xs pb-3 pr-4">
+                    Shoulder
+                  </th>
+                  <th className="text-left font-display uppercase tracking-widest text-muted-foreground text-xs pb-3 pr-4">
+                    Bust
+                  </th>
+                  <th className="text-left font-display uppercase tracking-widest text-muted-foreground text-xs pb-3">
+                    Top Length
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-border/50">
+                  <td className="py-4 pr-4 font-display uppercase text-white text-base">L</td>
+                  <td className="py-4 pr-4 text-muted-foreground">18.7"</td>
+                  <td className="py-4 pr-4 text-muted-foreground">44.5"</td>
+                  <td className="py-4 text-muted-foreground">27.4"</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p className="mt-6 text-xs font-sans text-muted-foreground">
+              Measurements may vary ±0.5". For the best fit, compare against a jersey you already own.
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
