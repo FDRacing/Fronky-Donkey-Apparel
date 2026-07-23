@@ -9,7 +9,7 @@ import CartDrawer from "../components/CartDrawer";
 const headings: Record<ShopCategory, string> = {
   all: "All Gear",
   jerseys: "Race Jerseys",
-  hats: "Lids & Beanies",
+  hats: "Hats & Beanies",
 };
 
 interface ShopProps {

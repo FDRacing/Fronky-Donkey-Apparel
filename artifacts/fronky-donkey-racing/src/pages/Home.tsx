@@ -296,7 +296,7 @@ export default function Home() {
             <div className="flex flex-col items-center text-center mb-16">
               <h3 className="text-primary font-display text-2xl uppercase tracking-widest mb-2">Raceday Hats</h3>
               <h2 className="text-5xl md:text-7xl font-display uppercase text-white leading-none">
-                Lids & Beanies
+                Hats & Beanies
               </h2>
             </div>
 
