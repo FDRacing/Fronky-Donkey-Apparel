@@ -416,8 +416,6 @@ export default function Home() {
               </p>
               <div className="flex gap-6">
                 <a href="#" className="text-muted-foreground hover:text-white transition-colors font-display uppercase tracking-widest">Insta</a>
-                <a href="#" className="text-muted-foreground hover:text-white transition-colors font-display uppercase tracking-widest">TikTok</a>
-                <a href="#" className="text-muted-foreground hover:text-white transition-colors font-display uppercase tracking-widest">YouTube</a>
               </div>
             </div>
           </div>
